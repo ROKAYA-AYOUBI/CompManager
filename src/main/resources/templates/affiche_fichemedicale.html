@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> La liste de Fiche Medicale </h1>
+	     <a href="/Ajouter_fiche_medicale ">Inscrit nouvelle Fiche Medicale </a>
+	    <br/><br/>
+	    <table border="1" cellpadding="10">
+	        <thead>
+	            <tr>
+	            	<th>date</th>
+	            	<th>cas</th>
+	                <th>Fiche Medicale ID</th>
+	               	<th>Nom_Respensable_Medicale</th>
+	                <th>Nom_benificier</th>
+	                <th>Prenom_benificier</th>
+	                <th>Moniteur</th>
+	                <th>Equipe</th>
+	             	<th>Decription</th>
+	               
+
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="fichemedicale : ${listFicheMedicale}">
+	            	<td th:text="${fichemedicale .date}">Date</td>
+	                <td th:text="${fichemedicale .id}">Fiche Medicale ID</td>
+	                <td th:text="${fichemedicale .cas}">cas</td>
+	              	<td th:text="${fichemedicale .Nom_Respensable_Medicale}">Nom_Respensable_Medicale</td>
+	                <td th:text="${fichemedicale .Nom_benificier}">Nom benificier</td>
+	             	<td th:text="${fichemedicale .Prenom_benificier}">Prenom benificier</td>
+	             	<td th:text="${fichemedicale .Moniteur}">Moniteur</td>
+	             	<td th:text="${fichemedicale .Equipe}">Equipe</td>
+	                <td th:text="${fichemedicale .Decription}">Decription</td>
+	          
+	                <td>
+	                    <a th:href="@{'/fichemedicale /edit/' + ${fichemedicale .id}}">Edit</a>
+	                    &nbsp;&nbsp;&nbsp;
+	                    <a th:href="@{'/fichemedicale /delete/' + ${fichemedicale .id}}">Delete</a>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+	
+</body>
+</html>

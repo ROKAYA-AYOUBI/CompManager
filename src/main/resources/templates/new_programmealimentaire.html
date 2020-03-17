@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+
+	 <div align="center">
+        <h1>Ajouter Programme d'alimentaire</h1>
+         <a href="/affiche_programmealimentaire">Liste Programme d'alimentaire</a>
+        <br />
+        <a href="/Ajouter_Benificier"> Benificier inscrit</a>
+        <br />
+        <a href="/Ajouter_fiche_medicale"> Fiche Medicale  inscrit</a>
+        <br />
+        <a href="/Ajouter_Personne"> Personne inscrit</a>
+        <br />
+          <a href="/activite">Inscrit d'activite</a>
+           <br />
+        <form action="#" th:action="@{/saveprogrammealimentaire}" th:object="${programmealimentaire}"
+            method="post">
+ 		
+            <table border="0" cellpadding="10">
+               <tr>
+                    <td>Nom Respensable:</td>
+                    <td><input type="text" th:field="*{Nom_Respensable}" /></td>
+                </tr>
+                <tr>
+                    <td>Jour:</td>
+                    <td><input type="number" th:field="*{jour}" /></td>
+                </tr>
+                <tr>
+                    <td>Petit Dejeuner:</td>
+                    <td><input type="text" th:field="*{Petit_Dejeuner}" /></td>
+                </tr>
+                <tr>
+                    <td>Dejeuner:</td>
+                    <td><input type="text" th:field="*{Dejeuner}" /></td>
+                </tr>
+              
+                <tr>
+                    <td>Collation:</td>
+                    <td><input type="text" th:field="*{Collation}" /></td>
+                </tr>
+                <tr>
+                    <td>Diner:</td>
+                    <td><input type="text" th:field="*{Diner}" /></td>
+                </tr>    
+                   
+                <tr>
+                    <td>Facture :</td>
+               			<td>
+                        <input type="file" class="custom-file-input" id="customFile" name="file" th:field="*{Facture}"/>
+                        
+                   		</td>
+                </tr>                  
+                <tr>
+                    <td colspan="2"><button type="submit">Enregistrer</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

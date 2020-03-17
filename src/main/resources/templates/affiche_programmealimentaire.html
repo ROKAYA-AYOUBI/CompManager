@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+	    <h1> Programme alimentaire</h1>
+	     <a href="/programmealimentaire">Ajouter Programme alimentaire</a>
+	    <br/><br/>
+	    <table border="1" cellpadding="10">
+	        <thead>
+	            <tr>
+	                <th>Personne ID</th>
+	                <th>date</th>
+	                <th>Nom_Respensable</th>
+	                <th>Jour</th>
+	                <th>Petit_Dejeuner</th>
+	           	    <th>Dejeuner</th>
+	                <th>Collation</th>
+	                <th>Diner</th>
+	                <th>Facture</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="programmealimentaire : ${listProgrammeAlimentaire}">
+	                <td th:text="${programmealimentaire.id}">ID</td>
+	                <td th:text="${programmealimentaire.date}">date</td>
+	                <td th:text="${programmealimentaire.Nom_Respensable}">Nom Respensable</td>
+	                <td th:text="${programmealimentaire.Jour}">Jour</td>
+	                <td th:text="${programmealimentaire.Petit_Dejeuner}">Petit_Dejeuner</td>
+	              	<td th:text="${programmealimentaire.Dejeuner}">Dejeuner</td>
+	                <td th:text="${programmealimentaire.Collation}">Collation</td>
+	                <td th:text="${programmealimentaire.Diner}">Diner</td>
+	                 <td th:text="${programmealimentaire.Facture}" >Facture </td>
+	             
+	                
+	                <td>
+	                    <a th:href="@{'/programmealimentaire/edit/' + ${programmealimentaire.id}}">Edit</a>
+	                    &nbsp;&nbsp;&nbsp;
+	                    <a th:href="@{'/programmealimentaire/delete/' + ${programmealimentaire.id}}">Delete</a>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>  
+</body>
+</html>

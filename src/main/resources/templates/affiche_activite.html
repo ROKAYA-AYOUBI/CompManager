@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+	    <h1> La liste de Activite</h1>
+	     <a href="/activite">Inscrit d'activite</a>
+	    <br/><br/>
+	    <table border="1" cellpadding="10">
+	        <thead>
+	            <tr>
+	                <th>Activite ID</th>
+	                <th>Type_Activite</th>
+	                <th>Nom_Activite</th>
+	                <th>Outils</th>
+	                <th>Nombre_Participants</th>
+	                <th>Objectif</th>
+	                <th>Categorie_Cible</th>
+	                <th>Description</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="activite : ${listActivite}">
+	                <td th:text="${activite.id}">Activite ID</td>
+	                <td th:text="${activite.Type_Activite}">Type d'activite</td>
+	                <td th:text="${activite.Nom_Activite}">Nom d'activite</td>
+	                <td th:text="${activite.Outils}">Outils</td>
+	                <td th:text="${activite.Nombre_Participants}">Nombre de Participants</td>
+	                <td th:text="${activite.Objectif}">Objectif</td>
+	              	<td th:text="${activite.Categorie_Cible}">Categorie Cible</td>
+	                <td th:text="${activite.Description}">Description</td>
+	                <td>
+	                    <a th:href="@{'/activite/edit/' + ${activite.id}}">Edit</a>
+	                    &nbsp;&nbsp;&nbsp;
+	                    <a th:href="@{'/activite/delete/' + ${activite.id}}">Delete</a>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>  
+</body>
+</html>

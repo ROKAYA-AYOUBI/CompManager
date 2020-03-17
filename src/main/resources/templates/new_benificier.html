@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	 <div align="center">
+        <h1>Create New Benificier</h1>
+         <a href="/affiche_Benificier">liste de Benificier inscrit</a>
+        <br />
+          <a href="/moniteur"> Moniteur inscrit</a>
+        <br />
+        <a href="/activite">Inscrit d'activite</a>
+          <br />
+        <a href="/Ajouter_fiche_medicale"> Fiche Medicale  inscrit</a>
+        <br />
+        <a href="/Ajouter_Personne"> Personne inscrit</a>
+        <br />
+        <form action="#" th:action="@{/save2}" th:object="${benificier}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">
+              
+                <tr>
+                    <td>Nom de Benificier:</td>
+                    <td><input type="text" th:field="*{Nom}" /></td>
+                </tr>
+                <tr>
+                    <td>Pernom de Benificier:</td>
+                    <td><input type="text" th:field="*{Prenom}" /></td>
+                </tr>
+           
+                <tr>
+                    <td>Date_Naissance:</td>
+                    <td><input type="text" th:field="*{Date_Naissance}" /></td>
+                </tr>
+              <tr>
+                    <td>Tuteur_Nom_Complet:</td>
+                    <td><input type="text" th:field="*{Tuteur_Nom_Complet}" /></td>
+                </tr>
+                 <tr>
+                    <td>CIN:</td>
+                    <td><input type="text" th:field="*{CIN}" /></td>
+                </tr> 
+                <tr>
+                    <td>Email :</td>
+                    <td><input type="email" th:field="*{email}" /></td>
+                </tr>
+                <tr>
+                    <td>Numero_Tel:</td>
+                    <td><input type="text" th:field="*{numero_Tel}" /></td>
+                </tr>    
+                    <tr>
+                    <td>Profession:</td>
+                    <td><input type="text" th:field="*{Profession}" /></td>
+                </tr>  
+                 </tr>    
+                    <tr>
+                    <td>Addresse:</td>
+                    <td><input type="text" th:field="*{Addresse}" /></td>
+                </tr> 
+                <tr>
+                    <td>Moniteur:</td>
+                    <td><input type="text" th:field="*{Moniteur}" /></td>
+                </tr>                  
+                <tr>
+                    <td colspan="2"><button type="submit">Enregistrer</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

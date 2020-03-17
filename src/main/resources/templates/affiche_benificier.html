@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	    <h1> La liste de Benificier inscript</h1>
+	     <a href="/Ajouter_Benificier">Inscrit nouvelle Benificier</a>
+	    <br/><br/>
+	    <table border="1" cellpadding="10">
+	        <thead>
+	            <tr>
+	                <th>Benificier ID</th>
+	               	<th>Nom</th>
+	                <th>Prenom</th>
+	                <th>Date_Naissance</th>
+	                <th>Tuteur_Nom_Complet</th>
+	                <th>Profession</th>
+	             	<th>CIN</th>
+	                <th>Email</th>
+	                <th>Addresse</th>
+	                <th>Numero_Tel</th>
+	                <th>Moniteur</th>
+
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="benificier : ${listBenificier}">
+	                <td th:text="${benificier.id}">benificier ID</td>
+	              	<td th:text="${benificier.Nom}">Nom</td>
+	                <td th:text="${benificier.Prenom}">Prenom</td>
+	                <td th:text="${benificier.Date_Naissance}">Date_Naissance</td>
+	             	<td th:text="${benificier.Tuteur_Nom_Complet}">Tuteur_Nom_Complet</td>
+	             	<td th:text="${benificier.Profession}">Profession</td>
+	             	<td th:text="${benificier.CIN}">CIN</td>
+	                <td th:text="${benificier.Email}">Email</td>
+	                <td th:text="${benificier.Addresse}">Addresse</td>
+	                <td th:text="${benificier.Numero_Tel}">Numero_Tel</td>
+	   	            <td th:text="${benificier.Moniteur}">Moniteur</td>
+	                <td>
+	                    <a th:href="@{'/benificier/edit/' + ${benificier.id}}">Edit</a>
+	                    &nbsp;&nbsp;&nbsp;
+	                    <a th:href="@{'/benificier/delete/' + ${benificier.id}}">Delete</a>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div> 
+</body>
+</html>

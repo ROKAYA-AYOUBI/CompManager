@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+        <h1>Create New Fiche Medicale</h1>
+         <a href="/affiche_fichemedicale">liste de Fiche Medicale inscrit</a>
+        <br />
+          <a href="/moniteur"> Moniteur inscrit</a>
+        <br />
+       <a href="/activite">Inscrit d'activite</a>
+           <br />
+        <a href="/Ajouter_Benificier"> Benificier inscrit</a>
+        <br />
+        <a href="/Ajouter_fiche_medicale"> Fiche Medicale  inscrit</a>
+        <br />
+        <a href="/Ajouter_Personne"> Personne inscrit</a>
+        <br />
+       
+        <form action="#" th:action="@{/saveFicheMedicale}" th:object="${fichemedicale}"
+            method="post">
+ 		
+            <table border="0" cellpadding="10">
+              <tr>
+                    
+                    <p th:text="${#temporals.formatISO(timestamp)}"></p>
+                   <!-- <td><input type="date" th:field="*{date}" /></td>  -->
+                                  
+                </tr>
+              <tr>
+	               <td>Cas:</td>
+	               <td>
+	               	   <select th:field="*{cas}">
+						    <option th:value="'Urgent'" th:text="Urgent"></option>
+						    <option th:value="'Urgent'" th:text="Normale"></option>
+						</select>
+					</td>
+                </tr>
+                <tr>
+                    <td>Nom Respensable Medicale:</td>
+                    <td><input type="text" th:field="*{Nom_Respensable_Medicale}" /></td>
+                </tr>
+                <tr>
+                    <td>Nom benificier:</td>
+                    <td><input type="text" th:field="*{Nom_benificier}" /></td>
+                </tr>
+                <tr>
+                    <td>Prenom benificier:</td>
+                    <td><input type="text" th:field="*{Prenom_benificier}" /></td>
+                </tr>
+                <tr>
+                    <td>Moniteur:</td>
+                    <td><input type="text" th:field="*{Moniteur}" /></td>
+                </tr>
+              
+                <tr>
+                    <td>Equipe:</td>
+                    <td><input type="text" th:field="*{Equipe}" /></td>
+                </tr>
+                <tr>
+                    <td>Decription:</td>
+                    <td><input type="text" th:field="*{Decription}" /></td>
+                </tr>    
+                   
+                              
+                <tr>
+                    <td colspan="2"><button type="submit">Enregistrer</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+	
+</body>
+</html>
