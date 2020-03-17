@@ -113,7 +113,7 @@ public class AppController {
 	  public String saveBenificier(@ModelAttribute("benificier") Benificier benificier) {
 	      Bservice.save(benificier);
 	       
-	      return "redirect:/inscriptionBenificier";
+	      return "redirect:/Ajouter_Benificier";
 	  }
 	
 	  //affiche la liste de Benificier
@@ -212,7 +212,7 @@ public class AppController {
 	  // page delete de programme alimentaire
 	  @RequestMapping("/programmealimentaire/delete/{id}")
 	  public String deleteProgrammeAlimentaire(@PathVariable(name = "id") int id) {
-	      service.delete(id);
+	      PMservice.delete(id);
 	      return "redirect:/";       
 	  }
 	  
